@@ -1,0 +1,1 @@
+{"root":["./src/index.ts","./src/controlllers/fetchCryptoData.controller.ts","./src/controlllers/getCryptoLatest.controller.ts","./src/db/cryptoStat.db.ts","./src/routes/index.ts"],"version":"5.6.3"}

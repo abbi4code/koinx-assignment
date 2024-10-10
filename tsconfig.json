@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,               // Disable all strict type-checking options
+    "noImplicitAny": false,       // Allow implicit 'any' type
+    "strictNullChecks": false,     // Allow null and undefined for all types
+    "skipLibCheck": true           // Skip type checking of declaration files
+  }
+}

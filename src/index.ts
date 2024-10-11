@@ -13,7 +13,14 @@ console.log("uri",uri)
 app.use("/",router)
 app.use(express.json())
 app.get("/", (req, res) => {
-    res.send("Hi there")
+    res.send(`
+        <h1>Hi there</h1>
+        <p>Welcome to the Cryptocurrency API! Here are the available endpoints:</p>
+        <ul>
+            <li><strong>GET /stats/:coin</strong> - Returns the latest data about the requested cryptocurrency (e.g., /stats/bitcoin).</li>
+            <li><strong>GET /deviation?crypto=<name></strong> - Returns the standard deviation of the price of the requested cryptocurrency for the last 100 records stored in the database (e.g., /deviation?crypto=bitcoin).</li>
+        </ul>
+    `)
 })
 
 

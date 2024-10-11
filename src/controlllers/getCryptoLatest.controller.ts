@@ -15,7 +15,8 @@ const getCrpytoLatest = async(req: Request, res: Response):Promise<Response> => 
                 ids:coin,
                 vs_currencies:"usd",
                 include_market_cap:true,
-                include_24hr_change:true
+                include_24hr_change:true,
+                x_cg_demo_api_key: process.env.GECKO_API_KEY
             }
         })
        
@@ -39,7 +40,7 @@ export async function cryptodeviation(req?:Request,res?:Response){
         return res.status(400).json({message:" Crypto Coin is required"})
     }
     
-    const data = await CrpytoStatData.find({currency: crypto})
+    const data = await CrpytoStatData.find({currency: crypto}).sort({createdAt:-1}).limit(100);
 
     let sum = data.reduce((acc,cryptostat)=>acc+cryptostat.priceUSD,0);
     

@@ -20,7 +20,7 @@ const fetchCryptoData = async (req?: Request,res?:Response) => {
                 vs_currencies: "usd",
                 include_market_cap: true,
                 include_24hr_change: true,
-                // x_cg_demo_api_key: process.env.GECKO_API_KEY
+                x_cg_demo_api_key: process.env.GECKO_API_KEY
 
             }
         });

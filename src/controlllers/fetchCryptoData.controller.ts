@@ -25,8 +25,8 @@ const fetchCryptoData = async (req?: Request,res?:Response) => {
             }
         });
 
-        console.log(response.data);
-        const saveData: any[] = [];
+       
+        const saveData = [];
 
         for (const [currency, data] of Object.entries(response.data)) {
             
@@ -41,11 +41,13 @@ const fetchCryptoData = async (req?: Request,res?:Response) => {
             saveData.push(cryptoData);
         }
 
-        console.log(saveData);
+        
 
         await CryptoStatData.insertMany(saveData).then(() => { console.log("Data saved successfully") });
+        const data = await CryptoStatData.find()
+     
 
-        res.status(200).json(saveData); 
+        res.status(200).json(data); 
 
     } catch (error) {
         console.error(error);

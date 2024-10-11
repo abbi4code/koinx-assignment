@@ -1,14 +1,17 @@
-import express from "express"
+import express, { Router } from "express"
 import fetchCryptoData from "../controlllers/fetchCryptoData.controller"
-import getCrpytoLatest from "../controlllers/getCryptoLatest.controller"
+import getCrpytoLatest, { cryptodeviation } from "../controlllers/getCryptoLatest.controller"
 
 
 
-const router = express.Router()
+
+const router:Router = express.Router()
 
 router.get("/bulk",fetchCryptoData)
 //@ts-ignore
-router.get("/stats/:coin",getCrpytoLatest)
+router.get("/stats/:coin", getCrpytoLatest)
+//@ts-ignore
+router.get("/deviation",cryptodeviation)
 
 
 

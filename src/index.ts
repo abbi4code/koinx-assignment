@@ -10,10 +10,10 @@ const app = express()
 const uri:any = process.env.DB_URI 
 console.log("uri",uri)
 
-app.use("/api",router)
+app.use("/",router)
 app.use(express.json())
 app.get("/", (req, res) => {
-    res.send("Hello World!")
+    res.send("Hi there")
 })
 
 
